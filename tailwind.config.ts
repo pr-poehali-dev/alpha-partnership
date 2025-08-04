@@ -17,8 +17,17 @@ export default {
 				'2xl': '1400px'
 			}
 		},
+		fonts: {
+			roboto: ['Roboto', 'sans-serif']
+		},
 		extend: {
 			colors: {
+				alfa: {
+					blue: '#0066CC',
+					green: '#00C851',
+					dark: '#1A1A1A',
+					light: '#F8F9FA'
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
