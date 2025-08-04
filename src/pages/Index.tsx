@@ -122,12 +122,13 @@ export default function Index() {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Дебетовая «Альфа-Карта для своих»</li>
-                  <li>• Кредитные карты с суперкэшбэком</li>
-                  <li>• Накопительный Альфа-Счёт (16% годовых)</li>
-                  <li>• Кредиты наличными</li>
+                  <li>• Дебетовая «Альфа-Карта для своих» — бесплатно, без условий</li>
+                  <li>• Кредитные карты (суперкэшбэк, Alfa Travel)</li>
+                  <li>• Накопительный Альфа-Счёт (16% годовых первые 2 мес)</li>
+                  <li>• Кредиты наличными по конкурентной ставке</li>
                   <li>• Премиальный сервис Alfa Only</li>
-                  <li>• Брокерский счёт, РКО</li>
+                  <li>• Брокерский счёт, регистрация ИП, РКО и эквайринг</li>
+                  <li>• Подключение Госуслуг, СБП, оплата ЖКУ, штрафов, налогов</li>
                 </ul>
               </CardContent>
             </Card>
@@ -204,14 +205,16 @@ export default function Index() {
             <Card className="bg-white shadow-lg">
               <CardHeader>
                 <div className="text-3xl font-bold text-blue-600 mb-2">C)</div>
-                <CardTitle>Бонусы</CardTitle>
+                <CardTitle>Бонусные механики</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold text-green-600 mb-2">до 5 000 000 ₽</div>
-                <p className="text-gray-600">
-                  Глобальный бонус за 500-20 000 новых клиентов за 3 месяца. 
-                  Экстра-бонус по 30 000 ₽ за каждого успешного партнёра.
-                </p>
+                <div className="text-2xl font-bold text-green-600 mb-3">до 5 000 000 ₽</div>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>• Новые партнёры: от 2 000 ₽ за первого, до 5 000 ₽ за каждого при 5+ квалифицированных рефералах</li>
+                  <li>• «Бонус-дуэт»: 2 000–10 000 ₽ вам и наставнику за удержание уровней A4–A7</li>
+                  <li>• Глобальный бонус: до 5 000 000 ₽ за 500–20 000 новых клиентов в глубине за 3 мес</li>
+                  <li>• Экстра-бонус: по 30 000 ₽ за каждого партнёра, который получил глобальный бонус вместе с вами</li>
+                </ul>
               </CardContent>
             </Card>
           </div>
@@ -279,6 +282,54 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Tools and Automation Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-16 text-gray-800">
+            Инструменты и автоматизация
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200">
+              <CardHeader>
+                <Icon name="MessageSquare" className="text-blue-600 mb-3" size={36} />
+                <CardTitle className="text-xl text-blue-700">Готовые решения</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 text-gray-600">
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" className="text-green-500 mt-1" size={16} />
+                    Готовые скрипты и маркетинговые шаблоны для соцсетей и мессенджеров
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" className="text-green-500 mt-1" size={16} />
+                    Чат-боты и таблицы для быстрой обработки лидов и переписки
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200">
+              <CardHeader>
+                <Icon name="Users" className="text-green-600 mb-3" size={36} />
+                <CardTitle className="text-xl text-green-700">Командная работа</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 text-gray-600">
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" className="text-green-500 mt-1" size={16} />
+                    Группы «вакансий» и «обмена рекомендациями» для масштабирования работы командой
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" className="text-green-500 mt-1" size={16} />
+                    Персональный менеджер и круглосуточная поддержка в мобильном приложении «Свой в Альфе»
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Steps Section */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
@@ -341,7 +392,25 @@ export default function Index() {
                 Нужны ли вложения и опыт?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600">
-                Нет и нет — всё бесплатно, без предварительных взносов и специальных знаний.
+                Нет и нет — всё бесплатно, без предварительных взносов и знаний.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="bg-white rounded-lg shadow-lg border-0 px-6">
+              <AccordionTrigger className="text-left font-semibold">
+                Как долго клиент привязан ко мне?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-600">
+                Клиент «привязывается» к вам на год: вы получаете вознаграждение за все его транзакции и целевые действия в течение 12 месяцев.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5" className="bg-white rounded-lg shadow-lg border-0 px-6">
+              <AccordionTrigger className="text-left font-semibold">
+                Что нужно для работы?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-600">
+                Не требует специального образования или лицензий — нужен только телефон и интернет. Достаточно уделять 30 мин–2 ч в день.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
