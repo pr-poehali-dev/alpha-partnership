@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import Icon from "@/components/ui/icon"
 
 export default function Index() {
@@ -241,26 +242,40 @@ export default function Index() {
 
       {/* Success Stories */}
       <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16 text-gray-800">
             Истории успеха
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { name: "Марина", city: "Казань", income: "30 000 ₽", time: "5 ч/нед", result: "купила квартиру без ипотеки" },
-              { name: "Алексей", city: "Новосибирск", income: "120 000 ₽", time: "удалённо", result: "совмещая с основной работой" },
-              { name: "Анна", city: "СПб", income: "5 000 000 ₽", time: "за полгода", result: "глобального бонуса в проекте" }
-            ].map((story, index) => (
-              <Card key={index} className="bg-gradient-to-br from-green-50 to-blue-50 border-2 border-green-200">
-                <CardContent className="p-6 text-center">
-                  <div className="text-2xl font-bold text-green-600 mb-2">{story.income}</div>
-                  <div className="text-lg font-semibold mb-2">{story.name} ({story.city})</div>
-                  <div className="text-sm text-gray-600 mb-2">{story.time}</div>
-                  <div className="text-sm text-gray-700">{story.result}</div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <Carousel className="w-full max-w-5xl mx-auto">
+            <CarouselContent>
+              {[
+                { name: "Марина", city: "Казань", income: "30 000 ₽", time: "5 ч/нед", result: "купила квартиру без ипотеки", photo: "👩‍💼", quote: "Благодаря программе я смогла накопить на квартиру всего за год!" },
+                { name: "Алексей", city: "Новосибирск", income: "120 000 ₽", time: "удалённо", result: "совмещая с основной работой", photo: "👨‍💻", quote: "Работаю из дома, клиенты сами находят меня через рекомендации." },
+                { name: "Анна", city: "СПб", income: "5 000 000 ₽", time: "за полгода", result: "глобального бонуса в проекте", photo: "👩‍🎯", quote: "Построила команду из 200+ партнёров и получила максимальный бонус." },
+                { name: "Дмитрий", city: "Екатеринбург", income: "75 000 ₽", time: "3 ч/день", result: "открыл своё агентство", photo: "👨‍💼", quote: "Начал с рекомендаций друзьям, теперь у меня собственное агентство." },
+                { name: "Елена", city: "Краснодар", income: "45 000 ₽", time: "в декрете", result: "обеспечивает семью", photo: "👩‍👧‍👦", quote: "В декрете зарабатываю больше мужа! Очень благодарна программе." }
+              ].map((story, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <Card className="bg-gradient-to-br from-green-50 to-blue-50 border-2 border-green-200 h-full">
+                    <CardContent className="p-6 text-center h-full flex flex-col justify-between">
+                      <div>
+                        <div className="text-4xl mb-4">{story.photo}</div>
+                        <div className="text-3xl font-bold text-green-600 mb-2">{story.income}</div>
+                        <div className="text-xl font-semibold mb-2">{story.name}</div>
+                        <div className="text-sm text-gray-600 mb-3">{story.city} • {story.time}</div>
+                        <div className="text-sm text-gray-700 mb-4">{story.result}</div>
+                      </div>
+                      <div className="bg-white/50 p-3 rounded-lg">
+                        <p className="text-sm italic text-gray-700">"{story.quote}"</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="-left-12" />
+            <CarouselNext className="-right-12" />
+          </Carousel>
         </div>
       </section>
 
